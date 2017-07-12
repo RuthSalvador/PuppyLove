@@ -1,0 +1,192 @@
+@import "_icomoon.scss";
+@import "_grid.scss";
+
+$color-font: rgb(255,255,255);
+$turque: rgb(33,178,166);
+
+*{
+  box-sizing: border-box;
+  color: $color-font;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  height: 100vh;
+}
+
+section {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bg-puppy {
+  background-image: url("../img/banner.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg-header {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  padding-bottom: 42px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.principal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 42px;
+  &__menu {
+    align-self: flex-end;
+  }
+  &__head {
+    &--title {
+      border-bottom: 2px solid $color-font;
+      border-top: 2px solid $color-font;
+      font-weight: 800;
+      letter-spacing: 7px;
+      padding: 14px 28px;
+    }
+    &--subtitle {
+      letter-spacing: 2px;
+      padding: 28px 0;
+    }
+  }
+  &__info {
+    &--title {
+      letter-spacing: 2px;
+      padding: 21px 0 0 0;
+    }
+    &--subtitle {
+      padding: 21px 0 21px 0;
+    }
+  }
+
+}
+
+.border-bm {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 21px;
+}
+
+[class*='btn-'] {
+  border-radius: 3.5px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 14px 35px;
+}
+
+.btn-red {
+  background-color: rgb(237,73,51);
+  border: 2px solid rgb(237,73,51);
+}
+
+.btn-transparent {
+  background-color: rgba(0,0,0,0);
+  border: 2px solid $color-font;
+}
+
+#puppy-friend {
+  background-color: $turque;
+  padding: 42px 0;
+}
+
+$colors-gray: (1: rgb(43,52,61), 2: rgb(39,48,56), 3: rgb(36,44,51));
+
+@mixin bg-color($nth, $color, $clase){
+  .#{$clase}:nth-of-type(#{$nth}) {
+    background-color: $color;
+  }
+}
+
+@each $nth, $color in $colors-gray {
+  @include bg-color($nth, $color, bg-gray);
+}
+
+.bg-gray > figcaption {
+  padding: 70px;
+}
+
+$colors-opacity: (1: rgba(0, 0, 0, 0.1));
+
+@function alp($nro) {
+  @return ($nro/20);
+}
+
+@for $i from 1 through 6 {
+  @include bg-color($i, rgba(0,0,0,alp($i)), bg-opacity)
+}
+
+.bg-opacity {
+  padding: 84px;
+}
+
+
+#puppy-benefits {
+  background-color: rgb(80,83,147);
+  padding: 42px 105px;
+}
+ footer {
+   background-color: rgba(21,21,21,0.9);
+ }
+
+ .secundary {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   padding: 70px;
+
+   [class*='btn-'] {
+     width: 100%;
+     margin: 7px 0;
+   }
+ }
+
+.list-inline {
+  padding-bottom: 70px;
+  padding-left: 0;
+  padding-top: 70px;
+  margin-left: -14px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 14px;
+  padding-left: 14px;
+}
+
+.image-icon {
+  padding: 35px;
+}
+
+h3, h4, button {
+  text-transform: uppercase;
+  line-height: 2rem;
+}
+
+p {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.font-head {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+}
+
+
