@@ -25,7 +25,7 @@ a {
 }
 
 .bg-puppy {
-  background-image: url("../img/banner.jpg");
+  background-image: url("../img/pic05.jpg");
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -139,20 +139,17 @@ $colors-opacity: (1: rgba(0, 0, 0, 0.1));
 
 #puppy-benefits {
   background-color: rgb(80,83,147);
-  padding: 42px 105px;
+  padding: 0
 }
  footer {
    background-color: rgba(21,21,21,0.9);
  }
 
  .secundary {
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
    padding: 70px;
 
    [class*='btn-'] {
-     width: 100%;
+     width: 350px;
      margin: 7px 0;
    }
  }
@@ -189,4 +186,18 @@ p {
   letter-spacing: 1.5px;
 }
 
+@media (min-width: 768px) and (max-width: 1199px) {
+  .bg-gray > figcaption {
+    padding: 42px;
+  }
+}
 
+@media (min-width: 768px) {
+  .bg-puppy {
+    background-image: url("../img/banner.jpg");
+  }
+  #puppy-benefits {
+    background-color: rgb(80,83,147);
+    padding: 42px 105px;
+  }
+}
